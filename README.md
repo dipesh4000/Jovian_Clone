@@ -106,7 +106,5 @@ python app.py
 - Place your HTML templates in the `templates/` folder.
 - Place images, CSS, and JS files in the `static/` folder.
 
----
-
 *This project is for educational/demo purposes and mimics a basic jobs portal backend.*
-````
+
