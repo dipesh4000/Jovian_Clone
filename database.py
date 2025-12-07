@@ -36,4 +36,10 @@ def load_jobs():
     else:
         jobs = load_jobs_from_json()
     return jobs
-load_jobs()
+
+def load_jobs_by_id(id):
+    jobs = load_jobs()
+    for job in jobs:
+        if job["id"] == int(id):
+            return job
+    return None
