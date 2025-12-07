@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Jovian Careers</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jovian Careers</title>
+    <link rel="icon" type="image/x-icon" href="\static\favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
-    <div>
-        <h3>Tittle</h3>
-        <p>{{job.title}}</p>
+<body class="bg-dark-subtle text-dark-emphasis">
+    {% include 'head.html' %}
+    <div class="container">
+        <h1 class="text-center fw-bold fs-1 mt-3 mb-5">Jovian Careers</h1>
+        <div>
+            <h3>Title :</h3>
+            <p>{{job.title}}</p>
+        </div>
+        <div>
+            <h3>Location :</h3>
+            <p>{{job.location}}</p>
+        </div>
+        <div>
+            <h3>Salary :</h3>
+            <p>{{job.salary}} {{job.currency}} per annum</p>
+        </div>
+        <div>
+            <h3>Responsibilities :</h3>
+            <div>{{ job.responsibilities | safe }}</div>
+        </div>
+        <div>
+            <h3>Requirements :</h3>
+            <div>{{ job.requirements | safe }}</div>
+        </div>
     </div>
-    <div>
-        <h3>Location</h3>
-        <p>{{job.location}}</p>
-    </div>
-    <div>
-        <h3>Salary</h3>
-        <p>{{job.salary}} {{job.currency}} per annum</p>
-    </div>
-    <div>
-        <h3>Responsibilities</h3>
-        <p>{{job.responsibilities}}</p>
-    </div>
-    <div>
-        <h3>Requirements</h3>
-        <p>{{job.requirements}}</p>
-    </div>
+    {% include 'foot.html' %}
 </body>
 </html>

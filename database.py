@@ -2,6 +2,7 @@ from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 import json
 import os
+import markdown
 
 load_dotenv()
 
@@ -41,5 +42,7 @@ def load_jobs_by_id(id):
     jobs = load_jobs()
     for job in jobs:
         if job["id"] == int(id):
+            job["responsibilities"] = markdown.markdown(job["responsibilities"])
+            job["requirements"] = markdown.markdown(job["requirements"])    
             return job
     return None
