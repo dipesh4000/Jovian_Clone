@@ -30,7 +30,11 @@
         </div>
         <div>
             <h3>Requirements :</h3>
-            <div>{{ job.requirements | safe }}</div>
+            <ul>
+                {% for line in job.requirements.split("\n- ") %}
+                <li>{{ line.replace('- ', '') }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     {% include 'foot.html' %}

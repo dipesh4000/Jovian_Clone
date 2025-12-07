@@ -42,7 +42,6 @@ def load_jobs_by_id(id):
     jobs = load_jobs()
     for job in jobs:
         if job["id"] == int(id):
-            job["responsibilities"] = markdown.markdown(job["responsibilities"])
-            job["requirements"] = markdown.markdown(job["requirements"])    
+            job["responsibilities"] = markdown.markdown(job["responsibilities"]) 
             return job
     return None
