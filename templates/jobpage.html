@@ -11,9 +11,9 @@
 <body class="bg-dark-subtle text-dark-emphasis">
     {% include 'head.html' %}
     <div class="container">
-        <h1 class="text-center fw-bold fs-1 mt-3 mb-5">Jovian Careers</h1>
-        <div>
-            <h3>Title :</h3>
+        <h1 class="8-0text-center fw-bold fs-1 mt-3 mb-5">Jovian Careers</h1>
+        <div class="lead">
+            <h4>Title :</h4>
             <p>{{job.title}}</p>
         </div>
         <div>
@@ -36,6 +36,7 @@
                 {% endfor %}
             </ul>
         </div>
+        {% include 'applyform.html' %}
     </div>
     {% include 'foot.html' %}
 </body>

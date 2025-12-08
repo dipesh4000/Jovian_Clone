@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from flask import jsonify
 from database import load_jobs, load_jobs_by_id
 
@@ -16,6 +16,11 @@ def open_job(id):
     if not job:
         return "Not Found", 404
     return render_template("jobpage.html", job = job)
+
+@app.route("/job/<id>/submit", methods=['post'])
+def apply_to_job(id):
+    data = request.form
+    return render_template("submitted.html", application = data, job= job)    
 
 @app.route("/api/jobs")
 def jobsapi():
